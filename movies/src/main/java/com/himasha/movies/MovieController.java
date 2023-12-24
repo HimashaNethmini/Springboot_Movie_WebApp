@@ -22,7 +22,7 @@ public class MovieController {
     return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);
     }
 
-    //get a specific movie by imdbId ( reason not to expose object id)
+    //get a specific movie by imdbId (reason not to expose object id)
     @GetMapping("/{imdbId}")
     public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable String imdbId){
         return new ResponseEntity<Optional<Movie>>(movieService.findMovieByImdbId(imdbId), HttpStatus.OK);
